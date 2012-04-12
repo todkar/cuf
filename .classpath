@@ -45,6 +45,53 @@
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/tyrex/tyrex/1.0.1/jars/tyrex.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/jaxen/jaxen/1.1.3/jars/jaxen.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/net.sf.ehcache/ehcache-core/2.5.0/jars/ehcache-core.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.neo4j.app/neo4j-server/jars/neo4j-server-1.6-static-web.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.neo4j/neo4j-kernel/jars/neo4j-kernel-1.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/jars/geronimo-jta_1.1_spec-1.1.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.neo4j/neo4j-lucene-index/jars/neo4j-lucene-index-1.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.apache.lucene/lucene-core/jars/lucene-core-3.5.0.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.neo4j/neo4j-graph-algo/jars/neo4j-graph-algo-1.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.neo4j/neo4j-udc/jars/neo4j-udc-1.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.neo4j/neo4j-graph-matching/jars/neo4j-graph-matching-1.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.neo4j/neo4j-cypher/jars/neo4j-cypher-1.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.neo4j/neo4j-jmx/jars/neo4j-jmx-1.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.neo4j/server-api/jars/server-api-1.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/javax.ws.rs/jsr311-api/jars/jsr311-api-1.1.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/commons-configuration/commons-configuration/jars/commons-configuration-1.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/commons-collections/commons-collections/3.2.1/jars/commons-collections.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/commons-logging/commons-logging/1.1.1/jars/commons-logging.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/commons-beanutils/commons-beanutils-core/jars/commons-beanutils-core-1.8.0.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/commons-digester/commons-digester/jars/commons-digester-1.8.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/commons-beanutils/commons-beanutils/jars/commons-beanutils-1.8.0.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.slf4j/slf4j-jdk14/jars/slf4j-jdk14-1.6.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.slf4j/log4j-over-slf4j/jars/log4j-over-slf4j-1.6.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.mortbay.jetty/jetty/jars/jetty-6.1.25.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.mortbay.jetty/jetty-util/jars/jetty-util-6.1.25.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.mortbay.jetty/servlet-api/jars/servlet-api-2.5-20081211.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/com.sun.jersey/jersey-server/bundles/jersey-server-1.9.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/commons-io/commons-io/jars/commons-io-1.4.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.codehaus.jackson/jackson-jaxrs/jars/jackson-jaxrs-1.8.3.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/com.tinkerpop.gremlin/gremlin-groovy/jars/gremlin-groovy-1.4.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/com.tinkerpop.gremlin/gremlin-java/jars/gremlin-java-1.4.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/com.tinkerpop.blueprints/blueprints-core/jars/blueprints-core-1.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.codehaus.jettison/jettison/bundles/jettison-1.3.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/stax/stax-api/jars/stax-api-1.0.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/com.tinkerpop/pipes/jars/pipes-0.9.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.codehaus.groovy/groovy/jars/groovy-1.8.4.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/antlr/antlr/jars/antlr-2.7.7.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/asm/asm/jars/asm-3.2.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/asm/asm-commons/jars/asm-commons-3.2.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/asm/asm-tree/jars/asm-tree-3.2.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/asm/asm-util/jars/asm-util-3.2.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/asm/asm-analysis/jars/asm-analysis-3.2.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.fusesource.jansi/jansi/jars/jansi-1.5.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/com.tinkerpop.blueprints/blueprints-neo4j-graph/jars/blueprints-neo4j-graph-1.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.rrd4j/rrd4j/jars/rrd4j-2.0.7.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/com.sun.jersey.contribs/jersey-multipart/jars/jersey-multipart-1.9.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.jvnet/mimepull/jars/mimepull-1.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.neo4j/neo4j-shell/jars/neo4j-shell-1.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/org.apache.servicemix.bundles/org.apache.servicemix.bundles.jline/bundles/org.apache.servicemix.bundles.jline-0.9.94_1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/cache/com.sun.jersey/jersey-core/bundles/jersey-core-1.9.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/play/play-test_2.9.1/2.0/jars/play-test_2.9.1.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/org.specs2/specs2_2.9.1/1.7.1/jars/specs2_2.9.1.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/org.specs2/specs2-scalaz-core_2.9.1/6.0.1/jars/specs2-scalaz-core_2.9.1.jar" kind="lib"></classpathentry>
@@ -61,7 +108,6 @@
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/org.seleniumhq.selenium/selenium-api/2.16.1/jars/selenium-api.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/org.apache.httpcomponents/httpclient/4.1.2/jars/httpclient.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/org.apache.httpcomponents/httpcore/4.1.3/jars/httpcore.jar" kind="lib"></classpathentry>
-  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/commons-logging/commons-logging/1.1.1/jars/commons-logging.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/commons-codec/commons-codec/1.4/jars/commons-codec.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/org.apache.commons/commons-exec/1.1/jars/commons-exec.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/net.java.dev.jna/jna/3.4.0/jars/jna.jar" kind="lib"></classpathentry>
@@ -72,7 +118,6 @@
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/xalan/xalan/2.7.1/jars/xalan.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/xalan/serializer/2.7.1/jars/serializer.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/xml-apis/xml-apis/1.3.04/jars/xml-apis.jar" kind="lib"></classpathentry>
-  <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/commons-collections/commons-collections/3.2.1/jars/commons-collections.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/org.apache.httpcomponents/httpmime/4.1.2/jars/httpmime.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/net.sourceforge.htmlunit/htmlunit-core-js/2.9/jars/htmlunit-core-js.jar" kind="lib"></classpathentry>
   <classpathentry path="/Users/ThoughtWorks/software/scala/play-2.0/framework/../repository/local/xerces/xercesImpl/2.9.1/jars/xercesImpl.jar" kind="lib"></classpathentry>
