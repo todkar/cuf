@@ -1,6 +1,6 @@
 package models
 
-class CreditUnion {
+class CreditUnion(val name: String, val acceptsWorkingIn: String) {
   
 
 }
