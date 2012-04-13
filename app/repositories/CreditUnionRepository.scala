@@ -56,11 +56,7 @@ class CreditUnionRepository(val neo: GraphDatabaseService) {
 //  }
 //try {
 //
-//      val trav: Traverser = first.traverse(Traverser.Order.BREADTH_FIRST,
-//        StopEvaluator.END_OF_GRAPH,
-//        ReturnableEvaluator.ALL,
-//        "isRelatedTo" : RelationshipType,
-//        Direction.BOTH)
+//      val trav: Traverser = first.traverse(x`x`)
 //
 //      for (node <- trav) {
 //        println(node.getProperty("name"))
