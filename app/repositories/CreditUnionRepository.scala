@@ -8,12 +8,12 @@ import models.CreditUnion
 import models.User
 
 class CreditUnionRepository(val neo: GraphDatabaseService) {
-//  val neo: GraphDatabaseService = new EmbeddedGraphDatabase("var/graphdb")
+  //  val neo: GraphDatabaseService = new EmbeddedGraphDatabase("var/graphdb")
 
-  def create(creditUnion: CreditUnion) = {
+  def create(creditUnion: CreditUnion): Unit = {
     var tx: Transaction = neo.beginTx
     val creditUnionReferenceNode = neo.createNode
-    
+
     neo.getReferenceNode.createRelationshipTo(creditUnionReferenceNode, "creditUnionReference")
 
     var creditUnionNode: Node = null
@@ -27,7 +27,7 @@ class CreditUnionRepository(val neo: GraphDatabaseService) {
 
       locationNode = neo.createNode
       locationNode.setProperty("name", creditUnion.acceptsWorkingIn)
-      nodeIndex.add( locationNode, "location", creditUnion.acceptsWorkingIn)
+      nodeIndex.add(locationNode, "location", creditUnion.acceptsWorkingIn)
 
       creditUnionNode.createRelationshipTo(locationNode, "acceptsWorkingIn")
 
@@ -36,36 +36,47 @@ class CreditUnionRepository(val neo: GraphDatabaseService) {
       tx.finish
     }
   }
-  
-  def buildGraphForUser(user: User) = {
-    var tx: Transaction = neo.beginTx()
-    tx = neo.beginTx
-    val userNode = neo.createNode
-    userNode.setProperty("name", user.name)
+
+  def createUser(user: User): Unit = {
+    val tx: Transaction = neo.beginTx()
+    val nodeIndex = neo.index.forNodes("nodes")
+    val userReferenceNode = neo.createNode
+
     try {
-    	val locationNode = neo.index.forNodes("nodes").get("location", user.worksIn).getSingle
-    	userNode.createRelationshipTo(locationNode, "worksIn")
-    	tx.success
+      neo.getReferenceNode.createRelationshipTo(userReferenceNode, "userReference")
+      nodeIndex.add(userReferenceNode, "userReference", "userReference")
+
+      val userNode = neo.createNode
+      userNode.setProperty("name", user.name)
+      userNode.setProperty("worksIn", user.worksIn)
+
+      nodeIndex.add(userNode, "user", user.name)
+
+      userReferenceNode.createRelationshipTo(userNode, "isAUser")
+
+      //    	val locationNode = neo.index.forNodes("nodes").get("location", user.worksIn).getSingle
+      //    	userNode.createRelationshipTo(locationNode, "worksIn")
+      tx.success
     } finally {
       tx.finish
     }
   }
-  
-//  def find(user: User): List[CreditUnion] = {
-//    neo.getReferenceNode()
-//  }
-//try {
-//
-//      val trav: Traverser = first.traverse(x`x`)
-//
-//      for (node <- trav) {
-//        println(node.getProperty("name"))
-//      }
-//      tx.success()
-//    } finally {
-//      tx.finish()
-//      println("finished transaction 2")
-//    }
-  
+
+  //  def find(user: User): List[CreditUnion] = {
+  //    neo.getReferenceNode()
+  //  }
+  //try {
+  //
+  //      val trav: Traverser = first.traverse(x`x`)
+  //
+  //      for (node <- trav) {
+  //        println(node.getProperty("name"))
+  //      }
+  //      tx.success()
+  //    } finally {
+  //      tx.finish()
+  //      println("finished transaction 2")
+  //    }
+
   implicit def stringToRelationshipType(x: String): RelationshipType = DynamicRelationshipType.withName(x)
 }
