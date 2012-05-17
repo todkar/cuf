@@ -25,9 +25,7 @@ class CreditUnionRepository(val neo: GraphDatabaseService) {
       nodeIndex.add(creditUnionNode, "creditUnion", creditUnion.name)
       creditUnionReferenceNode.createRelationshipTo(creditUnionNode, "isA")
 
-      locationNode = neo.createNode
-      locationNode.setProperty("name", creditUnion.acceptsWorkingIn)
-      nodeIndex.add(locationNode, "location", creditUnion.acceptsWorkingIn)
+      val locationNode = getLocationFromGraph(creditUnion.acceptsWorkingIn)
 
       creditUnionNode.createRelationshipTo(locationNode, "acceptsWorkingIn")
 
@@ -48,14 +46,13 @@ class CreditUnionRepository(val neo: GraphDatabaseService) {
 
       val userNode = neo.createNode
       userNode.setProperty("name", user.name)
-      userNode.setProperty("worksIn", user.worksIn)
-
       nodeIndex.add(userNode, "user", user.name)
 
       userReferenceNode.createRelationshipTo(userNode, "isAUser")
+      val locationNode = getLocationFromGraph(user.worksIn)
 
-      //    	val locationNode = neo.index.forNodes("nodes").get("location", user.worksIn).getSingle
-      //    	userNode.createRelationshipTo(locationNode, "worksIn")
+      userNode.createRelationshipTo(locationNode, "worksIn")
+
       tx.success
     } finally {
       tx.finish
@@ -78,5 +75,31 @@ class CreditUnionRepository(val neo: GraphDatabaseService) {
   //      println("finished transaction 2")
   //    }
 
+  def getReturnEvaluator: ReturnableEvaluator = {
+    val returnEvaluator: ReturnableEvaluator = new ReturnableEvaluator() {
+      def isReturnableNode(position: TraversalPosition): Boolean =
+        {
+          // Return nodes that don't have any outgoing relationships,
+          // only incoming relationships, i.e. leaf nodes.
+          return !position.currentNode().hasRelationship(
+            Direction.OUTGOING);
+        }
+    }
+    returnEvaluator
+  }
+
   implicit def stringToRelationshipType(x: String): RelationshipType = DynamicRelationshipType.withName(x)
+
+  private def getLocationFromGraph(location: String): Node = {
+    val locationNodes = neo.index.forNodes("nodes").get("location", location)
+    val locationNode = if (locationNodes.hasNext()) {
+      locationNodes.next()
+    } else {
+      val node = neo.createNode()
+      node.setProperty("name", location)
+      neo.index.forNodes("nodes").add(node, "location", location)
+      node
+    }
+    locationNode
+  }
 }
