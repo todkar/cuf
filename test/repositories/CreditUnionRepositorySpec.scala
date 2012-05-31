@@ -156,7 +156,7 @@ class CreditUnionRepositorySpec extends FunSuite with BeforeAndAfter with Should
 
     val allCreditUnions = userNode.traverse(Traverser.Order.BREADTH_FIRST,
       StopEvaluator.END_OF_GRAPH,
-      repository.getReturnEvaluator,
+      getReturnEvaluator,
       "worksIn": RelationshipType,
       Direction.BOTH,
       "acceptsWorkingIn": RelationshipType,
@@ -167,5 +167,18 @@ class CreditUnionRepositorySpec extends FunSuite with BeforeAndAfter with Should
   }
 
   implicit def stringToRelationshipType(x: String): RelationshipType = DynamicRelationshipType.withName(x)
+
+  def getReturnEvaluator: ReturnableEvaluator = {
+    val returnEvaluator: ReturnableEvaluator = new ReturnableEvaluator() {
+      def isReturnableNode(position: TraversalPosition): Boolean =
+        {
+          // Return nodes that don't have any outgoing relationships,
+          // only incoming relationships, i.e. leaf nodes.
+          return !position.currentNode().hasRelationship(
+            Direction.OUTGOING);
+        }
+    }
+    returnEvaluator
+  }
 
 }
