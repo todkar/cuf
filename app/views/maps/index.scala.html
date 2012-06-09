@@ -1,0 +1,53 @@
+@(message: String)
+
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBJVyx_0Z4BZytjkdkQxOpwLcP9PzG4flk&sensor=true">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var myCoordinates = [
+new google.maps.LatLng(40.818488,-73.937637),
+new google.maps.LatLng(40.820891,-73.943302),
+new google.maps.LatLng(40.820274,-73.943774),
+new google.maps.LatLng(40.820859,-73.945105),
+new google.maps.LatLng(40.817091,-73.948023),
+new google.maps.LatLng(40.815378,-73.948785),
+new google.maps.LatLng(40.814055,-73.949632),
+new google.maps.LatLng(40.812634,-73.950823),
+new google.maps.LatLng(40.811472,-73.952014),
+new google.maps.LatLng(40.811424,-73.952078),
+new google.maps.LatLng(40.808419,-73.944976)
+];
+var polyOptions = {
+path: myCoordinates,
+strokeColor: "#FF0000",
+strokeOpacity: 0.8,
+strokeWeight: 2,
+fillColor: "#0000FF",
+fillOpacity: 0.6
+}
+
+var myOptions = {
+          center: new google.maps.LatLng(40.818488, -73.937637),
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            myOptions);
+var it = new google.maps.Polygon(polyOptions);
+it.setMap(map);
+      }
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas" style="width:100%; height:100%"></div>
+  </body>
+</html>
