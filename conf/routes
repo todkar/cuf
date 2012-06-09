@@ -3,7 +3,7 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET     /                           controllers.MapsController.index
 
 # Maps
 GET 		/maps												controllers.MapsController.index
