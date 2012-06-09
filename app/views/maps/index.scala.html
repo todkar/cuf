@@ -1,53 +1,113 @@
 @(message: String)
 
 <html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map_canvas { height: 100% }
-    </style>
-    <script type="text/javascript"
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBJVyx_0Z4BZytjkdkQxOpwLcP9PzG4flk&sensor=true">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var myCoordinates = [
-new google.maps.LatLng(40.818488,-73.937637),
-new google.maps.LatLng(40.820891,-73.943302),
-new google.maps.LatLng(40.820274,-73.943774),
-new google.maps.LatLng(40.820859,-73.945105),
-new google.maps.LatLng(40.817091,-73.948023),
-new google.maps.LatLng(40.815378,-73.948785),
-new google.maps.LatLng(40.814055,-73.949632),
-new google.maps.LatLng(40.812634,-73.950823),
-new google.maps.LatLng(40.811472,-73.952014),
-new google.maps.LatLng(40.811424,-73.952078),
-new google.maps.LatLng(40.808419,-73.944976)
-];
-var polyOptions = {
-path: myCoordinates,
-strokeColor: "#FF0000",
-strokeOpacity: 0.8,
-strokeWeight: 2,
-fillColor: "#0000FF",
-fillOpacity: 0.6
-}
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+	html { height: 100% }
+	body { height: 100%; margin: 0; padding: 0 }
+	#map_canvas { height: 100% }
+	</style>
+	<script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+	<script type="text/javascript"
+	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBJVyx_0Z4BZytjkdkQxOpwLcP9PzG4flk&libraries=geometry&sensor=true">
+	</script>
+	<script type="text/javascript">
+	var map;
+	var marker;
+	var polygon;
+	var polygon2;
 
-var myOptions = {
-          center: new google.maps.LatLng(40.818488, -73.937637),
-          zoom: 15,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
-            myOptions);
-var it = new google.maps.Polygon(polyOptions);
-it.setMap(map);
-      }
-    </script>
-  </head>
-  <body onload="initialize()">
-    <div id="map_canvas" style="width:100%; height:100%"></div>
-  </body>
+	function initialize() {
+		var myOptions  = {
+			center: new google.maps.LatLng(40.818488, -73.937637),
+			zoom: 15,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	}
+
+	$(function() {  
+		$("#submit").click(function(e) {
+			e.preventDefault(); 
+			if (marker)
+			marker.setMap(null);
+			if(polygon)
+			polygon.setMap(null);
+			if(polygon2)
+			polygon2.setMap(null);
+
+			var address = $("#address").val();
+			var geocoder = new google.maps.Geocoder();
+			geocoder.geocode( { 'address': address}, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+					var latLng = results[0].geometry.location;
+					map.setCenter(latLng);
+					marker = new google.maps.Marker({
+						map: map,
+						position: latLng
+					});
+
+					var myCoordinates = [
+					new google.maps.LatLng(40.818488,-73.937637),
+					new google.maps.LatLng(40.820891,-73.943302),
+					new google.maps.LatLng(40.820274,-73.943774),
+					new google.maps.LatLng(40.820859,-73.945105),
+					new google.maps.LatLng(40.817091,-73.948023),
+					new google.maps.LatLng(40.815378,-73.948785),
+					new google.maps.LatLng(40.814055,-73.949632),
+					new google.maps.LatLng(40.812634,-73.950823),
+					new google.maps.LatLng(40.811472,-73.952014),
+					new google.maps.LatLng(40.811424,-73.952078),
+					new google.maps.LatLng(40.808419,-73.944976)
+					];
+					var polyOptions = {
+						path: myCoordinates,
+						strokeColor: "#0000FF",
+						strokeOpacity: 0.8,
+						strokeWeight: 3,
+						fillColor: "#0000FF",
+						fillOpacity: 0.2
+					}
+					polygon = new google.maps.Polygon(polyOptions);
+
+					var myCoordinates2 = [
+					new google.maps.LatLng(40.731326,-73.982570),
+					new google.maps.LatLng(40.723033,-73.988664),
+					new google.maps.LatLng(40.719292,-73.990295),
+					new google.maps.LatLng(40.718446,-73.988235),
+					new google.maps.LatLng(40.720723,-73.981325),
+					new google.maps.LatLng(40.728431,-73.975703)
+					];
+					var polyOptions2 = {
+						path: myCoordinates2,
+						strokeColor: "#FF0000",
+						strokeOpacity: 0.8,
+						strokeWeight: 3,
+						fillColor: "#FF0000",
+						fillOpacity: 0.2
+					}
+					polygon2 = new google.maps.Polygon(polyOptions2);
+
+					if(google.maps.geometry.poly.containsLocation(latLng, polygon))
+					polygon.setMap(map);
+					if(google.maps.geometry.poly.containsLocation(latLng, polygon2))
+					polygon2.setMap(map);
+				} else {
+					alert("Geocode failed: " + status);
+				}
+			});
+		});  
+	});
+	</script>
+</head>
+<body onload="initialize()">
+	<div id="addressSection" style="margin:10px;">
+		<form>
+			<input type="text" id="address" value="145 W 140 St, New York, NY" name="address" size="70" />
+			<input type="submit" id="submit" value="Find Me!" />
+		</form>
+	</div>
+	<div id="map_canvas" style="width:100%; height:100%"></div>
+</body>
 </html>
