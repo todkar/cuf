@@ -48,6 +48,8 @@ $(function () {
                     position:latLng
                 });
 
+                var youAreHere = "<b>You are here.</b>";
+                var toolTip = youAreHere + "<p>Looks like you're not eligible for any credit unions at the moment. :(</p>"
                 for (var i in polygons) {
                     var polygon = polygons[i];
                     polygon.setMap(null);
@@ -55,15 +57,15 @@ $(function () {
                         polygon.setMap(map);
 
                         var creditUnion = data.creditUnions[i];
-                        var youAreHere = "<b>You are here.</b><p>You are eligible for:<br />";
-                        var nameWithUrl = "<a href='" + creditUnion.www + "' target='_blank'>" + creditUnion.name + "</a></p>"
-                        var toolTip = youAreHere + nameWithUrl;
-                        var infowindow = new google.maps.InfoWindow({
-                            content: toolTip
-                        });
-                        infowindow.open(map, marker);
+                        var eligible = "<p>You are eligible for:<br /><a href='" + creditUnion.www +
+                            "' target='_blank'>" + creditUnion.name + "</a></p>"
+                        toolTip = youAreHere + eligible;
                     }
                 }
+                var infoWindow = new google.maps.InfoWindow({
+                    content: toolTip
+                });
+                infoWindow.open(map, marker);
             } else {
                 alert("Geocode failed: " + status);
             }
