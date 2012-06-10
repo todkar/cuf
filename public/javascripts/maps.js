@@ -21,8 +21,8 @@ function initialize() {
 	}
 	
 	var myOptions  = {
-		center: new google.maps.LatLng(40.818488, -73.937637),
-		zoom: 15,
+		center: new google.maps.LatLng(40.772222, -73.949661),
+		zoom: 12,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
@@ -41,6 +41,7 @@ $(function() {
 			if (status == google.maps.GeocoderStatus.OK) {
 				var latLng = results[0].geometry.location;
 				map.setCenter(latLng);
+				map.setZoom(15);
 				marker = new google.maps.Marker({
 					map: map,
 					position: latLng
