@@ -14,7 +14,7 @@ function initialize() {
             strokeOpacity:0.8,
             strokeWeight:3,
             fillColor:"#0000FF",
-            fillOpacity:0.2
+            fillOpacity:0.1
         }
         var polygon = new google.maps.Polygon(polyOptions);
         polygons.push(polygon);
