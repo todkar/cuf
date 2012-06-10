@@ -1,9 +1,9 @@
 var map;
 var marker;
-var polygons = [];
+var polygons = {};
 
 function initialize() {
-    for (var i = 0; i < data.creditUnions.length; ++i) {
+    for (var i in data.creditUnions) {
         var creditUnion = data.creditUnions[i];
         var coords = creditUnion.coords.map(function (c) {
             return new google.maps.LatLng(c.lat, c.lon);
@@ -17,7 +17,7 @@ function initialize() {
             fillOpacity:0.1
         }
         var polygon = new google.maps.Polygon(polyOptions);
-        polygons.push(polygon);
+        polygons[creditUnion.id] = polygon;
     }
 
     var myOptions = {
@@ -48,11 +48,20 @@ $(function () {
                     position:latLng
                 });
 
-                for (var i = 0; i < polygons.length; ++i) {
+                for (var i in polygons) {
                     var polygon = polygons[i];
                     polygon.setMap(null);
                     if (google.maps.geometry.poly.containsLocation(latLng, polygon)) {
                         polygon.setMap(map);
+
+                        var creditUnion = data.creditUnions[i];
+                        var youAreHere = "<b>You are here.</b><p>You are eligible for:<br />";
+                        var nameWithUrl = "<a href='" + creditUnion.www + "' target='_blank'>" + creditUnion.name + "</a></p>"
+                        var toolTip = youAreHere + nameWithUrl;
+                        var infowindow = new google.maps.InfoWindow({
+                            content: toolTip
+                        });
+                        infowindow.open(map, marker);
                     }
                 }
             } else {

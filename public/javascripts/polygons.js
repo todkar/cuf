@@ -1,10 +1,11 @@
 var data = data ? data : {};
 
-data.creditUnions = [];
+data.creditUnions = {};
 
 var cu7172 = {
     id:7172,
     name:"St. Philip's Church",
+    www:"#",
     coords:[
         { lat:40.818488, lon:-73.937637 },
         { lat:40.820891, lon:-73.943302 },
@@ -19,11 +20,12 @@ var cu7172 = {
         { lat:40.808419, lon:-73.944976 }
     ]
 };
-data.creditUnions.push(cu7172);
+data.creditUnions[cu7172.id] = cu7172;
 
 var cu24232 = {
     id:24232,
     name:"Lower East Side People's Federal Credit Union",
+    www:"http://lespeoples.org",
     coords:[
         { lat:40.733292148264248, lon:-73.987180496705321 },
         { lat:40.732347604285074, lon:-73.984941027926524 },
@@ -284,4 +286,4 @@ var cu24232 = {
         { lat:40.733965399738466, lon:-73.988779316840763 }
     ]
 };
-data.creditUnions.push(cu24232);
+data.creditUnions[cu24232.id] = cu24232;
