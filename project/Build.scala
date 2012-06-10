@@ -22,7 +22,8 @@ object ApplicationBuild extends Build {
     // Add your own project settings here      
     resolvers ++= Seq(
       "tinkerprop" at "http://tinkerpop.com/maven2",
-      "neo4j-public-repository" at "http://m2.neo4j.org/releases")
+      "neo4j-public-repository" at "http://m2.neo4j.org/releases",
+      "maven" at "http://download.java.net/maven/2/")
     )
 
 }
