@@ -8,10 +8,12 @@ GET     /                           controllers.HomeController.index
 # Maps
 GET 		/maps												controllers.MapsController.index
 
-# Maps
-GET 		/admin											controllers.AdminController.index
+# Credit union
+GET 		/creditUnion								controllers.CreditUnionController.index
+POST 		/creditUnion/create					controllers.CreditUnionController.create
+GET 		/creditUnion/form						controllers.CreditUnionController.form
 
-# Maps
+# User
 GET 		/user												controllers.UserController.index
 
 
