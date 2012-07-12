@@ -10,8 +10,8 @@ class Neo4JDatabaseAccess(val neo: GraphDatabaseService) {
   var userReferenceNode: Node = null
   val nodeIndex = neo.index.forNodes("nodes")
   withTransaction {
-	creditUnionReferenceNode = neo.createNode
-	userReferenceNode = neo.createNode
+    creditUnionReferenceNode = neo.createNode
+    userReferenceNode = neo.createNode
     neo.getReferenceNode.createRelationshipTo(creditUnionReferenceNode, "creditUnionReference")
     neo.getReferenceNode.createRelationshipTo(userReferenceNode, "userReference")
     nodeIndex.add(userReferenceNode, "userReference", "userReference")

@@ -3,11 +3,11 @@
 @import helper.twitterBootstrap._
 
 @helper.form(action = routes.CreditUnionController.create) {
-	@helper.inputText(creditUnionForm("name"))
-	@helper.inputText(creditUnionForm("acceptsWorkingIn"))
+  @helper.inputText(creditUnionForm("name"))
+  @helper.inputText(creditUnionForm("acceptsWorkingIn"))
 
-	<div class="actions">
-		<input type="submit" class="btn primary" value="Submit">
-        <a href="@routes.CreditUnionController.index" class="btn">Cancel</a>
-    </div>
+  <div class="actions">
+    <input type="submit" class="btn primary" value="Submit">
+    <a href="@routes.CreditUnionController.index" class="btn">Cancel</a>
+  </div>
 }
