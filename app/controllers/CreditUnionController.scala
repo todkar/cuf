@@ -31,6 +31,6 @@ object CreditUnionController extends Controller {
     val creditUnion = creditUnionForm.bindFromRequest.get
     creditUnions = creditUnion :: creditUnions
 
-    Ok(views.html.creditUnion.index(creditUnions))
+    Redirect(routes.CreditUnionController.index)
   }
 }
