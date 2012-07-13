@@ -15,7 +15,6 @@ db/
 dist/
 logs/
 test-result/
-lib/
 tmp/
 modules/
 CreditUnionFindr.ipr

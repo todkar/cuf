@@ -7,7 +7,7 @@ object ApplicationBuild extends Build {
     val appName         = "cuf"
     val appVersion      = "1.0-SNAPSHOT"
       
-    val NEO4J_VERSION 	= "1.7.M03"
+    val NEO4J_VERSION 	= "1.7.1"
 
     val appDependencies = Seq(
     // Add your project dependencies here,
@@ -19,11 +19,15 @@ object ApplicationBuild extends Build {
     )
 
     val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
-    // Add your own project settings here      
+    // Add your own project settings here
     resolvers ++= Seq(
       "tinkerprop" at "http://tinkerpop.com/maven2",
       "neo4j-public-repository" at "http://m2.neo4j.org/releases",
-      "maven" at "http://download.java.net/maven/2/")
+      "maven" at "http://download.java.net/maven/2/"),
+
+    testOptions in Test := Nil
+
     )
+
 
 }
