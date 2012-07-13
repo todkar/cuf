@@ -1,0 +1,27 @@
+@(creditUnions: List[CreditUnion])
+
+<h2>
+  Welcome to Credit Union admin screen!
+</h2>
+
+<div>
+  <strong>List of credit unions:</strong>
+</div>
+<table>
+<tr>
+<th> Name </th>
+<th> Accepts working in </th>
+</tr>
+@creditUnions.map { creditUnion =>
+  <tr>
+  <td>@creditUnion.name</td>
+  <td>@creditUnion.acceptsWorkingIn</td>
+  </tr>
+}
+</table>
+<div>
+<a href="@routes.CreditUnionController.form">Add new credit union</a>
+</div>
+<div>
+<a href="@routes.HomeController.index">Back to main menu</a>
+</div>

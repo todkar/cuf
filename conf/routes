@@ -3,10 +3,19 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.MapsController.index
+GET     /                           controllers.HomeController.index
 
 # Maps
 GET 		/maps												controllers.MapsController.index
+
+# Credit union
+GET 		/creditUnion								controllers.CreditUnionController.index
+POST 		/creditUnion/create					controllers.CreditUnionController.create
+GET 		/creditUnion/form						controllers.CreditUnionController.form
+
+# User
+GET 		/user												controllers.UserController.index
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
