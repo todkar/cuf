@@ -6,7 +6,7 @@ object ApplicationBuild extends Build {
 
     val appName         = "cuf"
     val appVersion      = "1.0-SNAPSHOT"
-      
+
     val NEO4J_VERSION 	= "1.7.1"
 
     val appDependencies = Seq(
