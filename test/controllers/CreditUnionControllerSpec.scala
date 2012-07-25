@@ -1,21 +1,22 @@
 package controllers
 
-import org.specs2.mutable._
 import play.api.test._
 import play.api.test.Helpers._
 import org.junit.runner.RunWith
-import org.specs2.runner.JUnitRunner
+import org.scalatest.FunSuite
+import org.scalatest.junit.JUnitRunner
+import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.Assertions
 
 @RunWith(classOf[JUnitRunner])
-class CreditUnionControllerSpec extends Specification {
-  
-  "respond to the index Action" in {
-  val Some(result) = routeAndCall(FakeRequest(GET, "/index"))
+class CreditUnionControllerSpec extends FunSuite with ShouldMatchers{
 
-  status(result) must equalTo(OK)
-  contentType(result) must beSome("text/html")
-  charset(result) must beSome("utf-8")
-  // contentAsString(result) must contain("Hello Bob")
-}
+  test("respond to the index Action") {
+    val Some(result) = routeAndCall(FakeRequest(GET, "/creditUnion"))
+
+    status(result) should equal(OK)
+    contentType(result) should be(Some("text/html"))
+    charset(result) should be(Some("utf-8"))
+  }
 }
 
