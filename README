@@ -4,8 +4,10 @@ This is your new Play 2.0 application
 =====================================
 
 Tech stack
+Scala 2.9.1
 Play 2.0.2
 Neo4J 1.7.1
+ScalaTest 1.7.2
 
 To install play just run 'brew install play'
 
