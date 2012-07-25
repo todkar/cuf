@@ -3,4 +3,10 @@ CUF - Credit Union Finder
 This is your new Play 2.0 application
 =====================================
 
-This file will be packaged with your application, when using `play dist`.
+Tech stack
+Play 2.0.2
+Neo4J 1.7
+
+To install play just run brew install play
+
+If you are new to Play, start by looking at some sample applications in Play at <homebrew>/Cellar/play/2.0.2/libexec/samples/scala/
