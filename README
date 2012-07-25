@@ -5,8 +5,12 @@ This is your new Play 2.0 application
 
 Tech stack
 Play 2.0.2
-Neo4J 1.7
+Neo4J 1.7.1
 
-To install play just run brew install play
+To install play just run 'brew install play'
 
 If you are new to Play, start by looking at some sample applications in Play at <homebrew>/Cellar/play/2.0.2/libexec/samples/scala/
+
+Download the code by cloning from github.com/todkar/cuf
+
+To start the application, go to the project directory and run 'play run'
