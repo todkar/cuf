@@ -1,18 +1,19 @@
 CUF - Credit Union Finder
-=====================================
-This is your new Play 2.0 application
-=====================================
+=========================
 
 Tech stack
+===========
 Scala 2.9.1
 Play 2.0.2
 Neo4J 1.7.1
 ScalaTest 1.7.2
 
-To install play just run 'brew install play'
-
-If you are new to Play, start by looking at some sample applications in Play at <homebrew>/Cellar/play/2.0.2/libexec/samples/scala/
-
+Setup
+======
+Install Scala and Play using homebrew. To install specific versions of a formula using homebrew, follow the instructions at http://stackoverflow.com/a/9832084
 Download the code by cloning from github.com/todkar/cuf
-
 To start the application, go to the project directory and run 'play run'
+
+Further reading
+===============
+If you are new to Play, start by looking at some sample applications in Play at <homebrew>/Cellar/play/2.0.2/libexec/samples/scala/
